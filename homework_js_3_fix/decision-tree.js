@@ -32,3 +32,39 @@ getTipsRating(30);
 getTipsRating(15);
 getTipsRating(5);
 getTipsRating(0);
+
+
+let dayNumber = 1;
+
+if (dayNumber === 1) {
+    console.log('Monday');
+} else if (dayNumber === 2) {
+    console.log('Tuesday');
+} else if (dayNumber === 3) {
+    console.log('Wednesday');
+} else if (dayNumber === 4) {
+    console.log('Thursday');
+} else if (dayNumber === 5) {
+    console.log('Friday');
+} else if (dayNumber === 6) {
+    console.log('Saturday');
+} else if (dayNumber === 7) {
+    console.log('Sunday');
+} else {
+    console.log('Invalid day number');
+}
+
+
+let statusCode = 403;
+
+if (statusCode === 200) {
+    console.log('Success');
+} else if (statusCode === 404) {
+    console.log('Not Found');
+} else if (statusCode === 500) {
+    console.log('Internal Server Error');
+} else if (statusCode === 403) {
+    console.log('Forbidden');
+} else {
+    console.log('Unknown error');
+}
