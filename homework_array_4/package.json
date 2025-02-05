@@ -1,0 +1,17 @@
+{
+    "name": "homework_array_4",
+    "version": "1.0.0",
+    "description": "## This lesson covers the following topics:",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@eslint/js": "^9.19.0",
+        "eslint": "^9.19.0",
+        "eslint-plugin-unicorn": "^56.0.1",
+        "globals": "^15.14.0"
+    }
+}
