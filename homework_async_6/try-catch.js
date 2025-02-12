@@ -1,14 +1,21 @@
+class apiError extends Error{
+    constructor(message) {
+        super(message);
+        this.name='apiError';
+    }
+}
+
 async function fetchData(url) {
     const response = await fetch(url);
     if (!response.ok) {
-        throw new Error(`Can't fetch data from ${url}`);
+        throw new apiError('Can not fetch data from pointed url');
     }
     return response.json();
 }
 
 async function handleRequests() {
     const invalidUrl = 'https://invalid-api.example.com';
-    const validUrl = 'https://jsonplaceholder.typicode.com/todos/1';
+    const validUrlFail = 'https://jsonplaceholder.typicode.com/todoss/11';
 
     try {
         console.log('Attempting to fetch from invalid URL...');
@@ -18,13 +25,14 @@ async function handleRequests() {
 
         try {
             console.log('Attempting to fetch from valid URL...');
-            const data = await fetchData(validUrl);
+            const data = await fetchData(validUrlFail);
             console.log('Data from valid URL:', data);
         } catch (error) {
             console.error('Error:', error.message);
 
-            throw new Error('Both API requests failed.');
+            throw new apiError('Both API requests failed.');
         }
+
     }
 }
 

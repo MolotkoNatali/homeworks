@@ -19,8 +19,8 @@ async function handleData() {
     const data = await getData();
     console.log('Data', data);
 }
-async () => {
+(async () => {
     console.log('before start');
     await handleData();
     console.log('after start');
-};
+})();
