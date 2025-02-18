@@ -1,5 +1,5 @@
 function sumArray(arr: number[]): number | void {
-    if (arr.some(isNaN)) {
+    if (arr.some(num => Number.isNaN(num))) {
         console.log('The array must contain only numbers');
         return;
     }
@@ -7,9 +7,9 @@ function sumArray(arr: number[]): number | void {
     return result;
 }
 
-const numArray: number[] = [1, 2, 3, 4];
-const strArray: string[] = ['1', '2', '3', '4'];
-const convertedArray: number[] = strArray.map(Number);
+const numArray = [1, 2, 3, 4];
+const strArray = ['1', '2', '3', '4'];
+const convertedArray = strArray.map(Number);
 
 console.log('Result for number array:', sumArray(numArray));
 console.log('Result for string array:', sumArray(convertedArray));

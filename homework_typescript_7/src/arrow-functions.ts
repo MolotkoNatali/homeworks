@@ -1,5 +1,5 @@
 const sumArray1 = (arr: number[]): number | void => {
-    if (arr.some(isNaN)) {
+    if (arr.some(num => Number.isNaN(num))) {
         console.log('The array must contain only numbers');
         return;
     }
