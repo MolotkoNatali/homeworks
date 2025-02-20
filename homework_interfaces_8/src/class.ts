@@ -1,4 +1,4 @@
-class Author {
+export class Author {
     public name: string;
     public birthYear: number;
 
@@ -12,7 +12,7 @@ class Author {
     }
 }
 
-class Publisher {
+export class Publisher {
     public name: string;
     public location: string;
 
@@ -53,11 +53,3 @@ export class Book {
     }
 }
 
-const author = new Author('Paulo Coelho', 1947);
-const publisher = new Publisher('Harper Torch', 'Brazil');
-const book = new Book('The Alchemist', author, publisher, 1988);
-
-console.log(book.getBookInfo());
-console.log(`Author's Age: ${book.getAuthorAge(2025)}`);
-
-book.setPublishYear(2002);

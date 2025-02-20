@@ -1,4 +1,4 @@
-class Address {
+export class Address {
     public street: string;
     public city: string;
 
@@ -30,7 +30,7 @@ abstract class Person {
     }
 }
 
-class Student extends Person {
+export class Student extends Person {
     private school: string;
 
     public constructor(name: string, age: number, address: Address, school: string) {
@@ -43,8 +43,3 @@ class Student extends Person {
     }
 }
 
-const address = new Address('Main street 122', 'Kyiv');
-const student = new Student('Anna Kos', 19, address, 'Economical University');
-
-student.introduce();
-console.log(student.getDetails());
