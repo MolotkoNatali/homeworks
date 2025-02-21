@@ -1,4 +1,9 @@
-import { Results, User } from './interfaces';
+import { Results } from './interfaces';
+import { Book, Author, Publisher } from './class';
+import { Address, Student } from './abstraction';
+import { Address2, Student2 } from './address2';
+import { Obj2 } from './class-obj2';
+
 async function fetchRandomUser(): Promise<Results> {
 
     try {
@@ -17,18 +22,6 @@ async function fetchRandomUser(): Promise<Results> {
     }
 }
 
-class Obj2 {
-    public shortInfo: string;
-    public sumAge: number;
-    public fullLocation: string;
-
-    public constructor(user: User) {
-
-        this.shortInfo = `Name: ${user.name.first} ${user.name.last}, Gender: ${user.gender}, Email: ${user.email}`;
-        this.sumAge = user.dob.age;
-        this.fullLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
-    }
-}
 
 (async () => {
     const data = await fetchRandomUser();
@@ -52,8 +45,6 @@ class Obj2 {
 })();
 
 
-import { Book, Author, Publisher } from './class';
-
 const author = new Author('Paulo Coelho', 1947);
 const publisher = new Publisher('Harper Torch', 'Brazil');
 const book = new Book('The Alchemist', author, publisher, 1988);
@@ -63,16 +54,12 @@ console.log(`Author's Age: ${book.getAuthorAge(2025)}`);
 book.setPublishYear(2002);
 
 
-import { Address, Student } from './abstraction';
-
 const address = new Address('Main street 122', 'Kyiv');
 const student = new Student('Anna Kos', 19, address, 'Economical University');
 
 student.introduce();
 console.log(student.getDetails());
 
-
-import { Address2, Student2 } from './Address2';
 
 const newAddress = new Address2('Main St 123', 'Kyiv');
 const newStudent = new Student2('Anna', 19, newAddress);
