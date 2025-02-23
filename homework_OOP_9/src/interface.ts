@@ -4,9 +4,11 @@ export interface IAnimalInterface {
     makeSound(): void;
 }
 
-export interface Shape {
+export interface IHomeAnimal extends IAnimalInterface {
+    pet(): void;
+}
+
+export interface IShape {
     area(): number;
     perimeter(): number;
 }
-
-

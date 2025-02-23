@@ -1,4 +1,4 @@
-import { IAnimalInterface, Shape } from './interface';
+import { IAnimalInterface, IHomeAnimal, IShape } from './interface';
 
 export class Animal implements IAnimalInterface {
     public constructor(public name: string, public age: number) {}
@@ -8,15 +8,22 @@ export class Animal implements IAnimalInterface {
     }
 }
 
-export class Dog extends Animal implements IAnimalInterface {
+export class Dog extends Animal implements IHomeAnimal {
     public makeSound(): void {
         console.log(`${this.name} barks!`);
     }
+    public pet(): void {
+        console.log(`You pet ${this.name}, the dog!`);
+    }
 }
 
-export class Cat extends Animal implements IAnimalInterface {
+
+export class Cat extends Animal implements IHomeAnimal {
     public makeSound(): void {
         console.log(`${this.name} meows!`);
+    }
+    public pet(): void {
+        console.log(`You pet ${this.name}, the cat!`);
     }
 }
 
@@ -34,9 +41,13 @@ export class PetOwner {
             console.log(`${pet.name} is a ${pet.constructor.name}`);
         });
     }
+    public petAnimal(pet: IHomeAnimal): void {
+        pet.pet();
+    }
 }
 
-export class Circle implements Shape {
+
+export class Circle implements IShape {
     public constructor(public radius: number) {}
 
     public area(): number {
@@ -48,7 +59,7 @@ export class Circle implements Shape {
     }
 }
 
-export class Rectangle implements Shape {
+export class Rectangle implements IShape {
     public constructor(public width: number, public height: number) {}
 
     public area(): number {
@@ -60,7 +71,7 @@ export class Rectangle implements Shape {
     }
 }
 
-export class Triangle implements Shape {
+export class Triangle implements IShape {
     public constructor(public base: number, public height: number, public side1: number, public side2: number) {}
 
     public area(): number {

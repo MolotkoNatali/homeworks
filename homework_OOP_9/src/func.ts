@@ -1,5 +1,5 @@
 import { Cat, Dog, PetOwner } from './classes';
-import { IAnimalInterface, Shape } from './interface';
+import { IAnimalInterface, IShape } from './interface';
 import { Circle, Rectangle, Triangle } from './classes';
 
 function animalSound(animal: IAnimalInterface): void {
@@ -8,17 +8,20 @@ function animalSound(animal: IAnimalInterface): void {
 
 const dog = new Dog('Lucy', 5);
 const cat = new Cat('Patty', 3);
-
 animalSound(dog);
 animalSound(cat);
+
 const owner = new PetOwner('Alex');
 
 owner.adoptPet(dog);
 owner.adoptPet(cat);
 owner.showPets();
 
+owner.petAnimal(dog);
+owner.petAnimal(cat);
 
-function printShapeInfo(shape: Shape): void {
+
+function printShapeInfo(shape: IShape): void {
     console.log(`Area: ${shape.area()}`);
     console.log(`Perimeter: ${shape.perimeter()}`);
 }
