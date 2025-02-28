@@ -1,25 +1,23 @@
 import { expect } from 'chai';
 import { Animal, Dog, PetOwner } from 'src/classes';
 
-describe('PetOwner Class', () => {
+describe('Top level describe', () => {
+
+    const originalLog = console.log;
     let dog: Dog;
     let petOwner: PetOwner;
-    let originalLog: Console['log'];
-    let logOutput: string;
-
-    before(() => {
-        originalLog = console.log;
-    });
+    let logOutput: string[];
 
     beforeEach(() => {
+
+        logOutput = [];
+        console.log = (message: string) => {
+            logOutput.push(message);
+        };
+
         dog = new Dog('Lucy', 5);
         petOwner = new PetOwner('Alex');
         petOwner.adoptPet(dog);
-
-        logOutput = '';
-        console.log = (message: string) => {
-            logOutput += message + '\n';
-        };
     });
 
     afterEach(() => {
@@ -34,6 +32,8 @@ describe('PetOwner Class', () => {
 
         expect(logOutput).to.include('Lucy is a Dog');
         expect(logOutput).to.include('Patty is a Animal');
+
+        expect(logOutput.length).to.be.greaterThan(1);
     });
 
     it('should pet a home animal', () => {
