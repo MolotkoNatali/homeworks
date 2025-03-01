@@ -9,7 +9,6 @@ describe('Top level describe', () => {
     let logOutput: string[];
 
     beforeEach(() => {
-
         logOutput = [];
         console.log = (message: string) => {
             logOutput.push(message);
@@ -25,7 +24,6 @@ describe('Top level describe', () => {
     });
 
     it('should adopt multiple pets and show their details', () => {
-
         const cat = new Animal('Patty', 3);
         petOwner.adoptPet(cat);
         petOwner.showPets();
@@ -42,7 +40,6 @@ describe('Top level describe', () => {
     });
 
     it('should update the name of a pet', () => {
-
         expect(dog.name).to.equal('Lucy');
         petOwner.updateName(dog, 'Big Lucy');
         expect(dog.name).to.equal('Big Lucy');
