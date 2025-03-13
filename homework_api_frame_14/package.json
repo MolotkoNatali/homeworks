@@ -1,0 +1,53 @@
+{
+  "name": "simple",
+  "version": "1.0.0",
+  "description": "ts simple project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx eslint . && mocha",
+    "test:log": "cross-env LOG_LEVEL=trace CI=true mocha",
+    "lint": "eslint src/",
+    "lint:fix": "npm run lint -- --fix",
+    "build": "npm run lint && tsc --build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@stylistic/eslint-plugin": "^3.0.0",
+    "@stylistic/eslint-plugin-ts": "^3.0.0",
+    "@types/chai": "^5.2.0",
+    "@types/dotenv-safe": "^8.1.6",
+    "@types/expect": "^1.20.4",
+    "@types/mocha": "^10.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "chai": "^5.2.0",
+    "eslint": "^9.22.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-mocha": "^10.5.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-unicorn": "^56.0.1",
+    "globals": "^15.15.0",
+    "mocha": "^11.1.0",
+    "prettier": "3.4.2",
+    "ts-mocha": "^11.1.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1",
+    "vitest": "^3.0.6"
+  },
+  "dependencies": {
+    "axios": "^1.8.2",
+    "dotenv-safe": "^9.1.0",
+    "playwright": "^1.51.0"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "type": "commonjs"
+}
