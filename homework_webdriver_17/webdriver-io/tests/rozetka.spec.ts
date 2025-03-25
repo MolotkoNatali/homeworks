@@ -1,6 +1,6 @@
-import { browser, $$, $ } from '@wdio/globals';
 import { expect } from 'expect-webdriverio';
 import { RozetkaPage } from '../src/pages/rozetka.page';
+import { $$, browser } from '@wdio/globals';
 
 describe('Rozetka Tests', function () {
     let rozetkaPage: RozetkaPage;
@@ -9,8 +9,6 @@ describe('Rozetka Tests', function () {
         rozetkaPage = new RozetkaPage();
         await browser.setWindowSize(1200, 800);
         await rozetkaPage.goTo();
-        await rozetkaPage.searchInput.waitForExist({ timeout: 15000 });
-        await rozetkaPage.searchInput.waitForDisplayed({ timeout: 15000 });
     });
 
     describe('Case 1: Пошук товару на сайті', function () {
@@ -18,7 +16,7 @@ describe('Rozetka Tests', function () {
             await rozetkaPage.searchProduct('iPhone');
             await rozetkaPage.waitForSearchResults();
 
-            const products = await $$('div.goods-tile');
+            const products = await rozetkaPage.productList;
             expect(products.length).toBeGreaterThan(0);
         });
     });
@@ -28,20 +26,27 @@ describe('Rozetka Tests', function () {
             await rozetkaPage.goToFirstCategory();
             await rozetkaPage.waitForCategoryProducts();
 
-            const products = await $$('li.portal-grid__cell');
-            expect(products.length).toBeGreaterThan(0);
+            const productCount = await rozetkaPage.getProductsCount();
+            expect(productCount).toBeGreaterThan(0);
         });
     });
 
     describe('Case 3: Додавання товару до кошика', function () {
         it('should add the first product to the cart', async function () {
-            const firstProduct = await $('rz-product-tile.item:first-child');
+            const products = await $$('rz-product-tile[_ngcontent-rz-client-c632725229]');
+            const firstProduct = products[0];
+
+            if (!firstProduct) {
+                throw new Error('First product not found.');
+            }
+
             const addToCartButton = await firstProduct.$('button.buy-button');
             const isButtonVisible = await addToCartButton.isDisplayed();
 
             if (isButtonVisible) {
-                await addToCartButton.click();
-                const cartBadge = await $('rz-header-cart .header-cart__button .badge');
+                await rozetkaPage.addToCartByIndex(0);
+
+                const cartBadge = await rozetkaPage.cartBadge;
                 await cartBadge.waitForExist({ timeout: 5000 });
 
                 const cartValue = await cartBadge.getText();
