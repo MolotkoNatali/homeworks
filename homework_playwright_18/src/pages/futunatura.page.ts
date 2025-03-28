@@ -1,16 +1,13 @@
 import { Locator, Page } from '@playwright/test';
 
 export class FutunaturaPage {
-    private page: Page;
-
     private searchInput: Locator;
     private addToCartButton: Locator;
     private firstProduct: Locator;
     private banner: Locator;
     private bestSellerSection: Locator;
 
-    public constructor(page: Page) {
-        this.page = page;
+    public constructor(private page: Page) {
         this.searchInput = page.locator('input[type="search"][name="search"]');
         this.addToCartButton = page.locator('#button-cart');
         this.firstProduct = page.locator('.product-item:first-child');
@@ -18,12 +15,23 @@ export class FutunaturaPage {
         this.bestSellerSection = page.locator('#embla-best-seller');
     }
 
+    public async waitForPageReady(): Promise<void> {
+        await this.page.waitForLoadState('load');
+        await this.page.waitForSelector('body');
+    }
+
     public getSearchInput(): Locator {
         return this.searchInput;
     }
 
-    public getAddToCartButton(): Locator {
-        return this.addToCartButton;
+    public async getAddToCartButton(): Promise<Locator> {
+        const addToCartButton = this.page.locator('#button-cart');
+        await addToCartButton.waitFor({ state: 'visible', timeout: 5000 });
+        return addToCartButton;
+    }
+
+    public async waitForAddToCartButton(): Promise<void> {
+        await this.addToCartButton.waitFor({ state: 'visible', timeout: 5000 });
     }
 
     public async getFirstProduct(): Promise<Locator> {
@@ -47,12 +55,18 @@ export class FutunaturaPage {
 
     public async goTo(): Promise<void> {
         await this.page.goto('https://www.futunatura.si/');
+        await this.waitForPageReady();
     }
 
     public async searchForTerm(searchTerm: string): Promise<void> {
         const searchField = this.getSearchInput();
         await searchField.fill(searchTerm);
         await searchField.press('Enter');
+    }
+
+    public async expectSearchResultsToBeVisible(): Promise<void> {
+        const itemsContainer = this.page.locator('div.row.gx-3');
+        await itemsContainer.waitFor({ state: 'visible' });
     }
 
     public async addProductToCart(): Promise<void> {
