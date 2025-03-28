@@ -1,6 +1,6 @@
 import { expect } from 'expect-webdriverio';
 import { RozetkaPage } from '../src/pages/rozetka.page';
-import { $$, browser } from '@wdio/globals';
+import { browser } from '@wdio/globals';
 
 describe('Rozetka Tests', function () {
     let rozetkaPage: RozetkaPage;
@@ -33,14 +33,14 @@ describe('Rozetka Tests', function () {
 
     describe('Case 3: Додавання товару до кошика', function () {
         it('should add the first product to the cart', async function () {
-            const products = await $$('rz-product-tile[_ngcontent-rz-client-c632725229]');
+            const products = await rozetkaPage.specificProductList;
             const firstProduct = products[0];
 
             if (!firstProduct) {
                 throw new Error('First product not found.');
             }
 
-            const addToCartButton = await firstProduct.$('button.buy-button');
+            const addToCartButton = await rozetkaPage.getAddToCartButton(firstProduct);
             const isButtonVisible = await addToCartButton.isDisplayed();
 
             if (isButtonVisible) {

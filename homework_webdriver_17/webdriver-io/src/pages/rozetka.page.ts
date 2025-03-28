@@ -13,6 +13,10 @@ export class RozetkaPage {
         return $$('div.goods-tile');
     }
 
+    public get specificProductList(): WebdriverIO.Element[] {
+        return $$('rz-product-tile[_ngcontent-rz-client-c632725229]');
+    }
+
     private get categoryList(): WebdriverIO.Element[] {
         return $$('ul.sidebar-theme li');
     }
@@ -29,6 +33,10 @@ export class RozetkaPage {
         const header = await $('header');
         await header.waitForExist({ timeout: 15000 });
         await header.waitForDisplayed({ timeout: 15000 });
+        await browser.waitUntil(async () => {
+            const readyState = await browser.execute(() => document.readyState);
+            return readyState === 'complete';
+        }, { timeout: 20000, timeoutMsg: 'Page did not load in time' });
     }
 
     public async searchProduct(query: string): Promise<void> {
@@ -55,20 +63,22 @@ export class RozetkaPage {
         return categoryProducts.length;
     }
 
-    public async addToCartByIndex(index: number): Promise<void> {
-        await browser.waitUntil(async () => {
-            const products = await $$('rz-product-tile[_ngcontent-rz-client-c632725229]');
-            return products.length > 0;
-        }, { timeout: 15000, timeoutMsg: 'No products found on the page.' });
+    public async getAddToCartButton(product: WebdriverIO.Element): Promise<WebdriverIO.Element> {
+        const addToCartButton = await product.$('button.buy-button');
+        await addToCartButton.waitForExist({ timeout: 15000 });
+        await addToCartButton.waitForDisplayed({ timeout: 15000 });
+        return addToCartButton as unknown as WebdriverIO.Element;
+    }
 
-        const products = await $$('rz-product-tile[_ngcontent-rz-client-c632725229]');
+    public async addToCartByIndex(index: number): Promise<void> {
+        const products = await this.specificProductList;
         const product = products[index];
+
         if (!product) {
             throw new Error(`Product at index ${index} does not exist.`);
         }
 
-        const addToCartButton = await product.$('button.buy-button');
-        await addToCartButton.waitForExist({ timeout: 15000 });
+        const addToCartButton = await this.getAddToCartButton(product);
         await addToCartButton.click();
     }
 
