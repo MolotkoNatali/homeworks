@@ -1,19 +1,27 @@
 import { Locator, Page } from '@playwright/test';
 
 export class FutunaturaPage {
-    private searchInput: Locator;
-    private addToCartButton: Locator;
-    private firstProduct: Locator;
-    private banner: Locator;
-    private bestSellerSection: Locator;
-
-    public constructor(private page: Page) {
-        this.searchInput = page.locator('input[type="search"][name="search"]');
-        this.addToCartButton = page.locator('#button-cart');
-        this.firstProduct = page.locator('.product-item:first-child');
-        this.banner = page.locator('img[src*="banner"]');
-        this.bestSellerSection = page.locator('#embla-best-seller');
+    private get searchInput(): Locator {
+        return this.page.locator('input[type="search"][name="search"]');
     }
+
+    private get addToCartButton(): Locator {
+        return this.page.locator('#button-cart.add_btn');
+    }
+
+    private get firstProduct(): Locator {
+        return this.page.locator('#main1 > div > div:nth-child(1)');
+    }
+
+    private get banner(): Locator {
+        return this.page.locator('img[src*="banner"]');
+    }
+
+    private get bestSellerSection(): Locator {
+        return this.page.locator('#embla-best-seller');
+    }
+
+    public constructor(private page: Page) {}
 
     public async waitForPageReady(): Promise<void> {
         await this.page.waitForLoadState('load');
@@ -25,7 +33,7 @@ export class FutunaturaPage {
     }
 
     public async getAddToCartButton(): Promise<Locator> {
-        const addToCartButton = this.page.locator('#button-cart');
+        const addToCartButton = this.page.locator('#button-cart.add_btn');
         await addToCartButton.waitFor({ state: 'visible', timeout: 5000 });
         return addToCartButton;
     }
@@ -35,9 +43,8 @@ export class FutunaturaPage {
     }
 
     public async getFirstProduct(): Promise<Locator> {
-        const firstProductSelector = '#main1 > div > div:nth-child(1)';
-        const firstProduct = this.page.locator(firstProductSelector);
-        await firstProduct.waitFor({ state: 'visible' });
+        const firstProduct = this.firstProduct;
+        await firstProduct.waitFor({ state: 'visible', timeout: 5000 });
         return firstProduct;
     }
 

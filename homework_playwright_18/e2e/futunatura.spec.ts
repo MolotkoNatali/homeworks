@@ -11,7 +11,6 @@ test.describe('Futunatura Website Tests', () => {
 
     test('Search for "kolagen" and verify list of items', async () => {
         const searchTerm = 'kolagen';
-        await futunaturaPage.goTo();
         await futunaturaPage.searchForTerm(searchTerm);
         await futunaturaPage.expectSearchResultsToBeVisible();
     });
@@ -24,6 +23,7 @@ test.describe('Futunatura Website Tests', () => {
 
     test('Click on a banner, select first product, and add to cart', async () => {
         await futunaturaPage.clickBanner();
+
         const firstProduct = await futunaturaPage.getFirstProduct();
         await firstProduct.click();
 
