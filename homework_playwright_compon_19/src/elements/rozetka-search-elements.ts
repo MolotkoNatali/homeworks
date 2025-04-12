@@ -2,12 +2,14 @@ import { Locator, Page } from '@playwright/test';
 import { waitForElement } from 'src/helpers/expect';
 
 export class RozetkaSearchElements {
-    public searchInput: Locator;
-    public searchButton: Locator;
+    public constructor(private page: Page) {}
 
-    public constructor(private page: Page) {
-        this.searchInput = this.page.locator('input.search-form__input');
-        this.searchButton = this.page.locator('button.search-form__submit');
+    public get searchInput(): Locator {
+        return this.page.locator('input.search-form__input');
+    }
+
+    public get searchButton(): Locator {
+        return this.page.locator('button.search-form__submit');
     }
 
     public async searchProduct(query: string): Promise<void> {

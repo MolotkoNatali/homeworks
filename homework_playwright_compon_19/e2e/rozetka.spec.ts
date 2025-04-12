@@ -1,18 +1,22 @@
 import { test, expect, Browser, Page } from '@playwright/test';
-import { RozetkaPage } from '../src/pages/rozetka.page';
+import { HomePage } from 'src/pages/home-page';
+import { SearchResultsPage } from 'src/pages/search-results-page';
 
 test.describe('Rozetka Website Tests', () => {
-    let rozetkaPage: RozetkaPage;
     let page: Page;
     let browser: Browser;
+    let homePage: HomePage;
+    let searchResultsPage: SearchResultsPage;
 
     test.beforeEach(async ({ browser: testBrowser }) => {
         browser = testBrowser;
         page = await browser.newPage();
         await page.setViewportSize({ width: 1200, height: 800 });
 
-        rozetkaPage = new RozetkaPage(page);
-        await rozetkaPage.goTo();
+        homePage = new HomePage(page);
+        searchResultsPage = new SearchResultsPage(page);
+
+        await homePage.goTo();
     });
 
     test.afterAll(async () => {
@@ -22,24 +26,26 @@ test.describe('Rozetka Website Tests', () => {
 
     test('Case 1: Search for "iPhone" and verify list of items', async () => {
         const searchTerm = 'iPhone';
-        await rozetkaPage.searchProduct(searchTerm);
-        await rozetkaPage.waitForSearchResults();
-        const productTiles = await rozetkaPage.productList;
+
+        await homePage.searchProduct(searchTerm);
+        await searchResultsPage.waitForSearchResults();
+
+        const productTiles = await searchResultsPage.productListLocator;
         const isProductVisible = await productTiles.first().isVisible();
         expect(isProductVisible).toBe(true);
     });
 
-    test('Case 2: Go to first category and verify product count', async () => {
-        await rozetkaPage.goToFirstCategory();
-        await rozetkaPage.waitForCategoryProducts();
-        await rozetkaPage.waitForProductListVisibility();
-        const isProductListVisible = await rozetkaPage.isProductListVisible();
+    test('Case 2: Go to first category and verify product list is visible', async () => {
+        await homePage.goToFirstCategory();
+        await searchResultsPage.waitForCategoryProducts();
+        await searchResultsPage.waitForProductListVisibility();
+        const isProductListVisible = await searchResultsPage.isProductListVisible();
         expect(isProductListVisible).toBe(true);
     });
 
-    test('Case 3: Add product to cart', async () => {
-        await rozetkaPage.addToCartByIndex(0);
-        await rozetkaPage.waitForCartUpdate();
-        await expect(rozetkaPage.cartBadge).toBeVisible();
+    test('Case 3: Add first product on home page to cart', async () => {
+        await homePage.addFirstProductToCart();
+        const isCartVisible = await homePage.isCartBadgeVisible();
+        expect(isCartVisible).toBe(true);
     });
 });
