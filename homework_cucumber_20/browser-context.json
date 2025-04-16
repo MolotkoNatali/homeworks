@@ -1,0 +1,398 @@
+{
+  "cookies": [
+    {
+      "name": "_GRECAPTCHA",
+      "value": "09ALcxeyr8YewlRTxp44xM7fPBup1vedSfOeTRoqXszbbmOP40_XaMdmEwJJqd-OMaQWFP55ZqV3dnbwbfHumiQmU",
+      "domain": "www.recaptcha.net",
+      "path": "/recaptcha",
+      "expires": 1759253960.981392,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "atlCohort",
+      "value": "{\"bucketAll\":{\"bucketedAtUTC\":\"2025-04-03T17:39:15.155Z\",\"version\":\"2\",\"index\":80,\"bucketId\":0}}",
+      "domain": ".atlassian.com",
+      "path": "/",
+      "expires": 1775237956.531794,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22c17b5873-3a64-408b-ba39-6f627e4f8729%22",
+      "domain": ".atlassian.com",
+      "path": "/",
+      "expires": 1775237964,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "bxp_gateway_anchor",
+      "value": "%7B%22anchor%22%3A%22Brand%22%2C%22type%22%3A%22SEO%22%7D",
+      "domain": ".atlassian.com",
+      "path": "/",
+      "expires": 1744306756.532012,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "atl_xid.xc",
+      "value": "%7B%22value%22%3A%2264499fe0-c386-4343-aa98-570a068902e1%22%2C%22type%22%3A%22xc%22%2C%22createdAt%22%3A%222025-04-03T17%3A39%3A17.398Z%22%7D",
+      "domain": ".atl-paas.net",
+      "path": "/",
+      "expires": 1775237957,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "atl_xid.xc",
+      "value": "%7B%22value%22%3A%22729dd278-f88d-4a65-80f9-069cfdb7fa42%22%2C%22createdAt%22%3A%222025-04-03T17%3A39%3A17.521Z%22%2C%22type%22%3A%22xc%22%7D",
+      "domain": ".atlassian.com",
+      "path": "/",
+      "expires": 1775237957,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "atl_xid.ts",
+      "value": "1743701957569",
+      "domain": "www.atlassian.com",
+      "path": "/",
+      "expires": 1775237957,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "atl_xid.current",
+      "value": "%5B%7B%22type%22%3A%22xc%22%2C%22value%22%3A%22729dd278-f88d-4a65-80f9-069cfdb7fa42%22%2C%22createdAt%22%3A%222025-04-03T17%3A39%3A17.521Z%22%7D%5D",
+      "domain": "www.atlassian.com",
+      "path": "/",
+      "expires": 1775237957,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "spQWN153nw8PaMv1tBlnPnvxW_O945OBwro5Jy_kJIA-1743701956-1.0.1.1-dAgjzVhD4CUTkPGgBUFumVZTMNRLuT33UDw2XGpb2mmAr.4b8bAp_A.oCFF6FwyPaVllpcaqNgooxp6ohVV9ogHXosaZVhXTlG1koy.75oU",
+      "domain": ".cookielaw.org",
+      "path": "/",
+      "expires": 1743703757.699344,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_otPreferencesSynced",
+      "value": "",
+      "domain": "www.atlassian.com",
+      "path": "/",
+      "expires": 1775237958,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "OptanonConsent",
+      "value": "isGpcEnabled=0&datestamp=Thu+Apr+03+2025+20%3A39%3A18+GMT%2B0300+(Eastern+European+Summer+Time)&version=202501.1.0&browserGpcFlag=0&isIABGlobal=false&identifierType=null&hosts=&landingPath=https%3A%2F%2Fwww.atlassian.com%2F&groups=1%3A1%2C2%3A1%2C3%3A1%2C4%3A1",
+      "domain": ".atlassian.com",
+      "path": "/",
+      "expires": 1775237958,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "atlassian.account.ffs.id",
+      "value": "3198b060-35e4-4860-95fe-fe3973f49035",
+      "domain": "id.atlassian.com",
+      "path": "/",
+      "expires": 1775237959.135599,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "atlassian.account.xsrf.token",
+      "value": "29796fe5-1795-4606-8d29-e0c7ba44297f",
+      "domain": "id.atlassian.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cuid",
+      "value": "dcf5e59ae3364d99b6896b5950ce23ef",
+      "domain": ".atlassian.com",
+      "path": "/",
+      "expires": 1778261964,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cuid",
+      "value": "dcf5e59ae3364d99b6896b5950ce23ef",
+      "domain": ".id.atlassian.com",
+      "path": "/",
+      "expires": 1778261964,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "atlassian.account.xsrf.token",
+      "value": "f4e9b1a5-743a-45bf-961f-caa1dba5f677",
+      "domain": "www.atlassian.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__aid_user_id",
+      "value": "712020%3Abc1f2f48-c9e7-41bb-9a46-053aa50e53e1",
+      "domain": ".atlassian.com",
+      "path": "/",
+      "expires": 1746293965.605866,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cloud.session.token",
+      "value": "eyJraWQiOiJzZXNzaW9uLXNlcnZpY2UvcHJvZC0xNzM4Nzk0ODc0IiwiYWxnIjoiUlMyNTYifQ.eyJhc3NvY2lhdGlvbnMiOltdLCJzdWIiOiI3MTIwMjA6YmMxZjJmNDgtYzllNy00MWJiLTlhNDYtMDUzYWE1MGU1M2UxIiwiZW1haWxEb21haW4iOiJnbWFpbC5jb20iLCJpbXBlcnNvbmF0aW9uIjpbXSwiY3JlYXRlZCI6MTc0MzcwMTk2MSwicmVmcmVzaFRpbWVvdXQiOjE3NDM3MDI1NjEsInZlcmlmaWVkIjp0cnVlLCJpc3MiOiJzZXNzaW9uLXNlcnZpY2UiLCJzZXNzaW9uSWQiOiI4NzgyOTZlMy1kOWMyLTRkNzQtODJjZS1hZmZhNDQ2YjlmYjUiLCJzdGVwVXBzIjpbXSwiYXVkIjoiYXRsYXNzaWFuIiwibmJmIjoxNzQzNzAxOTYxLCJleHAiOjE3NDYyOTM5NjEsImlhdCI6MTc0MzcwMTk2MSwiZW1haWwiOiJsZXZrb25pdWtAZ21haWwuY29tIiwianRpIjoiODc4Mjk2ZTMtZDljMi00ZDc0LTgyY2UtYWZmYTQ0NmI5ZmI1In0.OjCOidWGB_RNLTfyvJyc0e9FheuyEJpsUvc8clX-vUfbFpmfgShVdyCp8F-kfyWFUT_7H2B-g79ju97TG8J1ouEQNyLghWOqp_VOOHIhJyxtuPDpF2kBhwbEUfHwE9WCXsIey_maQssYc420hpuUK7rvWEmreTZ9Y3oHquVcdBV2dHd75KQ9BLLaZeoOUelIsH5YrraVHHBxdukgOc6C1gQd6DfHVVhKNyMVEjvpStvkS32jv5lSrfFrs8Ae2Ijk2Z-heR4obJ1nQq4CejQrFGwZ1MsY4TbojIyXR7W7GFRkuRCcepr0KxPttKnD5yLanoGOxrbGwQ9CdXDsAaXtWQ",
+      "domain": "www.atlassian.com",
+      "path": "/",
+      "expires": 1746293962.615197,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "atlassian.account.xsrf.token",
+      "value": "9b6327ef-6dcd-48fa-af4b-7b13da189b11",
+      "domain": "start.atlassian.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cloud.session.token",
+      "value": "eyJraWQiOiJzZXNzaW9uLXNlcnZpY2UvcHJvZC0xNzM4Nzk0ODc0IiwiYWxnIjoiUlMyNTYifQ.eyJhc3NvY2lhdGlvbnMiOltdLCJzdWIiOiI3MTIwMjA6YmMxZjJmNDgtYzllNy00MWJiLTlhNDYtMDUzYWE1MGU1M2UxIiwiZW1haWxEb21haW4iOiJnbWFpbC5jb20iLCJpbXBlcnNvbmF0aW9uIjpbXSwiY3JlYXRlZCI6MTc0MzcwMTk2MSwicmVmcmVzaFRpbWVvdXQiOjE3NDM3MDI1NjIsInZlcmlmaWVkIjp0cnVlLCJpc3MiOiJzZXNzaW9uLXNlcnZpY2UiLCJzZXNzaW9uSWQiOiI4NzgyOTZlMy1kOWMyLTRkNzQtODJjZS1hZmZhNDQ2YjlmYjUiLCJzdGVwVXBzIjpbXSwiYXVkIjoiYXRsYXNzaWFuIiwibmJmIjoxNzQzNzAxOTYyLCJleHAiOjE3NDYyOTM5NjIsImlhdCI6MTc0MzcwMTk2MiwiZW1haWwiOiJsZXZrb25pdWtAZ21haWwuY29tIiwianRpIjoiODc4Mjk2ZTMtZDljMi00ZDc0LTgyY2UtYWZmYTQ0NmI5ZmI1In0.Dhdnlt0YbH-SGp85H0CwTIj9Mkxmu0oF06mu_u6s0F_s-F2pzTnP6Q-Kan40Bln4nMHnkMdpI8fN0X9j-lgbh0yV7uMFeGKcY69D44Xyzsl9_xaOFKBhMabCAS86XTFOg1e7QU90hWbt-RvMnian0KOwf5wr7JPStN-o4WBnIP646IGkI-IEaL-_pjYlO7vM8TD3-X8OG62bq2hBfei5eeIXrRlwR1zEr8CZ7Wl9fZ6A0SUuTf9zSKgxZ7VZ6-H4jEZhRA1UgSArn6Vc5viqVftzX_8vV8WyEGYHr46qE_gsOSm8tcRybRORmSl6kK3nioCF-hWxLnGD0cZhBkRxQw",
+      "domain": "start.atlassian.com",
+      "path": "/",
+      "expires": 1746293964.094488,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "atlassian.account.xsrf.token",
+      "value": "26960369-275a-4e74-ac79-357fd48c8b31",
+      "domain": "home.atlassian.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cloud.session.token",
+      "value": "eyJraWQiOiJzZXNzaW9uLXNlcnZpY2UvcHJvZC0xNzM4Nzk0ODc0IiwiYWxnIjoiUlMyNTYifQ.eyJhc3NvY2lhdGlvbnMiOltdLCJzdWIiOiI3MTIwMjA6YmMxZjJmNDgtYzllNy00MWJiLTlhNDYtMDUzYWE1MGU1M2UxIiwiZW1haWxEb21haW4iOiJnbWFpbC5jb20iLCJpbXBlcnNvbmF0aW9uIjpbXSwiY3JlYXRlZCI6MTc0MzcwMTk2MSwicmVmcmVzaFRpbWVvdXQiOjE3NDM3MDI1NjQsInZlcmlmaWVkIjp0cnVlLCJpc3MiOiJzZXNzaW9uLXNlcnZpY2UiLCJzZXNzaW9uSWQiOiI4NzgyOTZlMy1kOWMyLTRkNzQtODJjZS1hZmZhNDQ2YjlmYjUiLCJzdGVwVXBzIjpbXSwiYXVkIjoiYXRsYXNzaWFuIiwibmJmIjoxNzQzNzAxOTY0LCJleHAiOjE3NDYyOTM5NjQsImlhdCI6MTc0MzcwMTk2NCwiZW1haWwiOiJsZXZrb25pdWtAZ21haWwuY29tIiwianRpIjoiODc4Mjk2ZTMtZDljMi00ZDc0LTgyY2UtYWZmYTQ0NmI5ZmI1In0.R_pnMZYLjT8OqEXyJ6xS0B0uVR-CBUo5XbV2MQky7KaaProQ_kd8XgcDl8HyuF03w5B5uhfN_bF1QwkCUQ9UBmDVOELR9ocUktA3CDs8VsZNJuNK9xSC2zhedfoxjFaEHcSrOyT8vQrRzXJDBfxHScPc89KEskVtj1tTEoO7woxxBBifl5M3JsKOewLU0PTmcuRG_xPWjSZuQlPRVnA3mcI257oGVqkWnfTqhzkw5ff7bloYY_IyEl6ZERwyqI32O36C7TceeBk5xLcPTaqpbXVQv9xnraDUF38X5hrMIRJAVwmrKdhFl0hoW0F46TzBznN0LwC92VTuigLLaFYR8w",
+      "domain": "id.atlassian.com",
+      "path": "/",
+      "expires": 1746293965.60578,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cloud.session.token",
+      "value": "eyJraWQiOiJzZXNzaW9uLXNlcnZpY2UvcHJvZC0xNzM4Nzk0ODc0IiwiYWxnIjoiUlMyNTYifQ.eyJhc3NvY2lhdGlvbnMiOltdLCJzdWIiOiI3MTIwMjA6YmMxZjJmNDgtYzllNy00MWJiLTlhNDYtMDUzYWE1MGU1M2UxIiwiZW1haWxEb21haW4iOiJnbWFpbC5jb20iLCJpbXBlcnNvbmF0aW9uIjpbXSwiY3JlYXRlZCI6MTc0MzcwMTk2MSwicmVmcmVzaFRpbWVvdXQiOjE3NDM3MDI1NjYsInZlcmlmaWVkIjp0cnVlLCJpc3MiOiJzZXNzaW9uLXNlcnZpY2UiLCJzZXNzaW9uSWQiOiI4NzgyOTZlMy1kOWMyLTRkNzQtODJjZS1hZmZhNDQ2YjlmYjUiLCJzdGVwVXBzIjpbXSwiYXVkIjoiYXRsYXNzaWFuIiwibmJmIjoxNzQzNzAxOTY2LCJleHAiOjE3NDYyOTM5NjYsImlhdCI6MTc0MzcwMTk2NiwiZW1haWwiOiJsZXZrb25pdWtAZ21haWwuY29tIiwianRpIjoiODc4Mjk2ZTMtZDljMi00ZDc0LTgyY2UtYWZmYTQ0NmI5ZmI1In0.gV70AhftXBhdXCm54QsMmRBOONZxpVYov_pNMAnZQv1ZkB_5pDrZ5drmsBJLH5Pg4c2vGSHnBUHmjZzQyzI_pgxazqFofv8IYcpr_3jbIPZXeVZ1GkRMbFp5T7oBduXd5vnDsIHcc_BN5MbPAXIdUG8IlCW8OcqZhZCdblCbcrchU-D1D91SqVjqahpQmHNoLfjKfQOPBUb1fAG0lj6HE4ea3IzA7zdnOetDhLgrUKeTyd9xthtqQzU2lCKTQkx8do3juP9c60cV58HJN4FugM0835YNRff76gmE9h-JnDdSQRsCsx0AHNtgJjYzVxZvIIyddp_3QG9WTlAQqttwIA",
+      "domain": "home.atlassian.com",
+      "path": "/",
+      "expires": 1746293968.000063,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "JSESSIONID",
+      "value": "koxJGYbvQogHyAGZFQ1rbLTKgIj9wJqSB9r2Ckht",
+      "domain": "home.atlassian.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "atl-bsc-consent-token",
+      "value": "0031111010",
+      "domain": "home.atlassian.com",
+      "path": "/",
+      "expires": 1743702568,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "atl-bsc-show-banner",
+      "value": "0",
+      "domain": "home.atlassian.com",
+      "path": "/",
+      "expires": 1743702568,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://home.atlassian.com",
+      "localStorage": [
+        {
+          "name": "feature-flags-atl.v2.last-user.prod.watermelon.eyJpZGVudGlmaWVyIjp7InR5cGUiOiJhdGxhc3NpYW5BY2NvdW50SWQiLCJ2YWx1ZSI6IjcxMjAyMDpiYzFmMmY0OC1jOWU3LTQxYmItOWE0Ni0wNTNhYTUwZTUzZTEifX0=",
+          "value": "{\"value\":\"feature-flags-atl.v2.flags.prod.watermelon.b4a2a380-5620-4085-8e89-80f9566c681c.eyJhZGRpdGlvbmFsSWRlbnRpZmllcnMiOnsidGVuYW50SWQiOiIwN2NlZWZlYy0xN2VjLTQ2YzAtOGQ1Yi03MTEyMWJiM2MyY2IifSwiY3VzdG9tIjp7IndvcmtzcGFjZVV1aWQiOiJ1bmFibGUtdG8tcmVzb2x2ZS13b3Jrc3BhY2UifSwiaWRlbnRpZmllciI6eyJ0eXBlIjoiYXRsYXNzaWFuQWNjb3VudElkIiwidmFsdWUiOiI3MTIwMjA6YmMxZjJmNDgtYzllNy00MWJiLTlhNDYtMDUzYWE1MGU1M2UxIn0sImlzQW5vbnltb3VzIjpmYWxzZX0=\",\"timestamp\":1743701967736}"
+        },
+        {
+          "name": "search-config",
+          "value": "{\"2215339170\":{\"result\":{\"resources\":[{\"id\":\"ari:cloud:jira-software::site/07ceefec-17ec-46c0-8d5b-71121bb3c2cb\",\"baseUrl\":\"https://levkoniuk.atlassian.net\",\"siteName\":\"levkoniuk\"},{\"id\":\"ari:cloud:jira::site/07ceefec-17ec-46c0-8d5b-71121bb3c2cb\",\"baseUrl\":\"https://levkoniuk.atlassian.net\",\"siteName\":\"levkoniuk\"}],\"intercomHmac\":\"44f6f17442cb42c20641691a2db309e653bb0c943dc9117f11ec22e78b1a985d\",\"siteMetadata\":[{\"siteId\":\"07ceefec-17ec-46c0-8d5b-71121bb3c2cb\",\"siteName\":\"levkoniuk\",\"orgId\":\"78bdfe1c-ff8e-436f-a854-0371dd7dc03f\",\"productDataRegions\":{\"devops\":[\"eu-west-1\"],\"jira\":[\"eu-west-1\"]},\"productEdition\":{},\"isRovoEnabled\":false}]},\"expirationTime\":1743702867764,\"accessCount\":1}}"
+        },
+        {
+          "name": "awc.session.id",
+          "value": "1743701967927"
+        },
+        {
+          "name": "feature-flags-atl.v2.flags.prod.watermelon.b4a2a380-5620-4085-8e89-80f9566c681c.eyJhZGRpdGlvbmFsSWRlbnRpZmllcnMiOnsidGVuYW50SWQiOiIwN2NlZWZlYy0xN2VjLTQ2YzAtOGQ1Yi03MTEyMWJiM2MyY2IifSwiY3VzdG9tIjp7IndvcmtzcGFjZVV1aWQiOiJ1bmFibGUtdG8tcmVzb2x2ZS13b3Jrc3BhY2UifSwiaWRlbnRpZmllciI6eyJ0eXBlIjoiYXRsYXNzaWFuQWNjb3VudElkIiwidmFsdWUiOiI3MTIwMjA6YmMxZjJmNDgtYzllNy00MWJiLTlhNDYtMDUzYWE1MGU1M2UxIn0sImlzQW5vbnltb3VzIjpmYWxzZX0=",
+          "value": "{\"timestamp\":1743701967736,\"version\":\"versionFormat::json;{\\\"keyIdentifier\\\":{\\\"type\\\":\\\"atlassianAccountId\\\",\\\"value\\\":\\\"712020:bc1f2f48-c9e7-41bb-9a46-053aa50e53e1\\\"},\\\"customAttributes\\\":{\\\"workspaceUuid\\\":\\\"unable-to-resolve-workspace\\\"},\\\"flagVersions\\\":[],\\\"segmentVersions\\\":[{\\\"id\\\":\\\"founders\\\",\\\"version\\\":2,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"lighthouse-customers\\\",\\\"version\\\":2,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"watermelon-dev-team\\\",\\\"version\\\":20,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"atlas-onboarding-team\\\",\\\"version\\\":4,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"atlas-globetrotters\\\",\\\"version\\\":2,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"reporting-lines-team\\\",\\\"version\\\":2,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"design-system-team\\\",\\\"version\\\":14,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"team-central-integrations-team\\\",\\\"version\\\":4,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"atlassian-workspace\\\",\\\"version\\\":3,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"atlas-relay-team\\\",\\\"version\\\":2,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"watermelon-triad\\\",\\\"version\\\":18,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"reporting-lines-rollout-group\\\",\\\"version\\\":4,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"people-and-teams-collective\\\",\\\"version\\\":3,\\\"dependencies\\\":[]}],\\\"tapVersions\\\":[{\\\"id\\\":\\\"ari:cloud:identity::user/712020:bc1f2f48-c9e7-41bb-9a46-053aa50e53e1\\\",\\\"version\\\":1743679169998,\\\"dependencies\\\":[]},{\\\"id\\\":\\\"ari:cloud:platform::site/07ceefec-17ec-46c0-8d5b-71121bb3c2cb\\\",\\\"version\\\":1743690262792,\\\"dependencies\\\":[]}],\\\"isStateFromFileCache\\\":false}\",\"flags\":{}}"
+        },
+        {
+          "name": "multiRegionRoutingEnabled",
+          "value": "true"
+        },
+        {
+          "name": "statsig.stable_id.543641231",
+          "value": "\"f175060e-0ee3-43db-8d37-83d4adeee564\""
+        },
+        {
+          "name": "statsig.session_id.543641231",
+          "value": "{\"sessionID\":\"93c6d939-7112-428d-aa80-e47d488b19b7\",\"startTime\":1743701966711,\"lastUpdate\":1743701966712}"
+        },
+        {
+          "name": "ajs_anonymous_id",
+          "value": "\"c21f3a4a-6398-4139-a82b-c827d9aa6a26\""
+        },
+        {
+          "name": "awc.session.expiry",
+          "value": "1743703767927"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.atlassian.com",
+      "localStorage": [
+        {
+          "name": "onboarding-journey_expiresIn",
+          "value": "1744306757794"
+        },
+        {
+          "name": "statsig.session_id.1647434767",
+          "value": "{\"sessionID\":\"33d51249-9d40-46aa-8fef-dc181f2ea976\",\"startTime\":1743701957564,\"lastUpdate\":1743701958518}"
+        },
+        {
+          "name": "onboarding-journey",
+          "value": "{\"anchor\":{\"name\":\"Brand\",\"type\":\"SEO\"},\"team\":\"\"}"
+        },
+        {
+          "name": "atl_xid.current",
+          "value": "[{\"type\":\"xc\",\"value\":\"729dd278-f88d-4a65-80f9-069cfdb7fa42\",\"createdAt\":\"2025-04-03T17:39:17.521Z\"}]"
+        },
+        {
+          "name": "awc.session.id",
+          "value": "1743701957620"
+        },
+        {
+          "name": "atl_xid.ts",
+          "value": "1743701957569"
+        },
+        {
+          "name": "atl_xid.xc",
+          "value": "{\"type\":\"xc\",\"value\":\"729dd278-f88d-4a65-80f9-069cfdb7fa42\",\"createdAt\":\"2025-04-03T17:39:17.521Z\"}"
+        },
+        {
+          "name": "awc.session.expiry",
+          "value": "1743703757620"
+        },
+        {
+          "name": "ajs_anonymous_id",
+          "value": "\"c17b5873-3a64-408b-ba39-6f627e4f8729\""
+        },
+        {
+          "name": "statsig.stable_id.1647434767",
+          "value": "\"1cc9471a-55ba-4bc9-9210-abd01556757b\""
+        }
+      ]
+    },
+    {
+      "origin": "https://www.recaptcha.net",
+      "localStorage": [
+        {
+          "name": "rc::a",
+          "value": "MXI0bXViOTExZG55"
+        },
+        {
+          "name": "rc::f",
+          "value": "0aAJrhsvD3KN8jEOMX3uOMrYMTwKCpLjiCwJC84LxL2eKAPkoSQoyddwIw_DUQOlKyIRfawYw"
+        }
+      ]
+    },
+    {
+      "origin": "https://id.atlassian.com",
+      "localStorage": [
+        {
+          "name": "statsig.session_id.3569395337",
+          "value": "{\"sessionID\":\"9d2c4f34-fc79-4b4c-9d2c-68b2e120909f\",\"startTime\":1743701959672,\"lastUpdate\":1743701965135}"
+        },
+        {
+          "name": "__cuid",
+          "value": "dcf5e59ae3364d99b6896b5950ce23ef"
+        },
+        {
+          "name": "_grecaptcha",
+          "value": "09ALcxeyrhsOWeS_Z31L2dQ4b_jW9SGcVFlEje74T3i11k83Tm5n2zyE-JdPdK8LRL3whJ2BkoPH2hMPStULtdwpStmmf4n8P5Ix2BTTsZNRQkbxV7K3SQjjSldA3J5Av7"
+        },
+        {
+          "name": "awc.session.expiry",
+          "value": "1743703759144"
+        },
+        {
+          "name": "ajs_anonymous_id",
+          "value": "\"c17b5873-3a64-408b-ba39-6f627e4f8729\""
+        },
+        {
+          "name": "awc.session.id",
+          "value": "1743701959144"
+        },
+        {
+          "name": "statsig.stable_id.3569395337",
+          "value": "\"4a530e76-c334-44a6-a989-53cf6c5d6644\""
+        }
+      ]
+    }
+  ]
+}
