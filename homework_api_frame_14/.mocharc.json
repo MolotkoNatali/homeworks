@@ -3,5 +3,11 @@
     "spec": "tests/**/*.spec.ts",
     "require": ["tsx", "./hooks/mocha-global-setup.ts"],
     "retries": 2,
-    "timeout": 120000
+    "timeout": 120000,
+    "reporter": "mochawesome",
+    "reporterOptions": {
+    "reportFilename": "customReportFilename",
+    "quiet": true
+    }
+
 }
