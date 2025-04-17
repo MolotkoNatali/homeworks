@@ -11,18 +11,12 @@ export class CustomWorld extends World {
         super(options);
     }
 
-    /**
-     * Launches the browser and initializes context + page.
-     */
     public async openBrowser(headless = false): Promise<void> {
         this.browser = await chromium.launch({ headless });
         this.context = await this.browser.newContext();
         this._page = await this.context.newPage();
     }
 
-    /**
-     * Closes browser resources after test.
-     */
     public async closeBrowser(): Promise<void> {
         try {
             await this._page?.close();
@@ -33,9 +27,6 @@ export class CustomWorld extends World {
         }
     }
 
-    /**
-     * Getter for the Playwright page instance.
-     */
     public get page(): Page {
         if (!this._page) {
             throw new Error('Page is not initialized. Make sure to call openBrowser() before accessing page.');
@@ -43,4 +34,5 @@ export class CustomWorld extends World {
         return this._page;
     }
 }
+
 setWorldConstructor(CustomWorld);

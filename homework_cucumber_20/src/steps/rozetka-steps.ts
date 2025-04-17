@@ -7,11 +7,7 @@ import { CustomWorld } from '../worlds/world.js';
 Given('I am on the Rozetka home page', { timeout: 20000 }, async function (this: CustomWorld) {
     await this.openBrowser();
     const homePage = new HomePage(this.page);
-    await homePage.open();
-
-    // Явное ожидание ключевого элемента страницы, чтобы удостовериться, что она загружена
-    await this.page.waitForSelector('rz-header', { timeout: 10000 });
-
+    await homePage.goTo();
     this.homePage = homePage;
 });
 

@@ -13,7 +13,7 @@ export class SearchResultsPage {
     }
 
     public async waitForCategoryProducts(): Promise<void> {
-        await this.widgetListLocator.waitFor({ state: 'visible', timeout: 20000 }); // Увеличен таймаут
+        await this.widgetListLocator.waitFor({ state: 'visible', timeout: 20000 });
     }
 
     public get productListLocator(): Locator {
@@ -21,12 +21,12 @@ export class SearchResultsPage {
     }
 
     public async waitForProductListVisibility(): Promise<void> {
-        await this.widgetListLocator.waitFor({ state: 'visible', timeout: 20000 }); // Увеличен таймаут
+        await this.widgetListLocator.waitFor({ state: 'visible', timeout: 20000 });
     }
 
     public async isProductListVisible(): Promise<boolean> {
         const productListLocator = this.page.locator('rz-widget-list:nth-child(3)');
-        await productListLocator.waitFor({ state: 'visible', timeout: 20000 }); // Увеличен таймаут
+        await productListLocator.waitFor({ state: 'visible', timeout: 20000 });
         return await productListLocator.isVisible();
     }
 
