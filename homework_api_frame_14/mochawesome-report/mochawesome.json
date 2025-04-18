@@ -1,0 +1,197 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-17T20:24:16.640Z",
+    "end": "2025-04-17T20:24:25.041Z",
+    "duration": 8401,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8c0227a5-b318-48cb-a1c6-7d1afd23e35f",
+      "title": "",
+      "fullFile": "C:\\Users\\user\\Desktop\\sources\\Homework\\homework_api_frame_14\\tests\\jokes-api-service.spec.ts",
+      "file": "\\tests\\jokes-api-service.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9624e139-cf2b-4af9-a460-aaf1e6bfabd3",
+          "title": "Jokes API Service tests",
+          "fullFile": "C:\\Users\\user\\Desktop\\sources\\Homework\\homework_api_frame_14\\tests\\jokes-api-service.spec.ts",
+          "file": "\\tests\\jokes-api-service.spec.ts",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Jokes API Service tests\"",
+              "fullTitle": "Jokes API Service tests \"before all\" hook in \"Jokes API Service tests\"",
+              "timedOut": false,
+              "duration": 2,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "jokesApiService=new import_jokes_api_service.JokesApiService",
+              "err": {},
+              "uuid": "f569309c-86ba-42c3-a804-9a12e311014b",
+              "parentUUID": "9624e139-cf2b-4af9-a460-aaf1e6bfabd3",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should fetch a random joke and verify it contains the required properties",
+              "fullTitle": "Jokes API Service tests should fetch a random joke and verify it contains the required properties",
+              "timedOut": false,
+              "duration": 1698,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const randomJoke=await jokesApiService.getRandomJoke();(0,import_chai.expect)(randomJoke).to.have.property(\"id\");(0,import_chai.expect)(randomJoke).to.have.property(\"type\");(0,import_chai.expect)(randomJoke).to.have.property(\"setup\");(0,import_chai.expect)(randomJoke).to.have.property(\"punchline\");context.jokeId=randomJoke.id",
+              "err": {},
+              "uuid": "02fbfbb9-9412-4e9d-b94d-756efd95b0fb",
+              "parentUUID": "9624e139-cf2b-4af9-a460-aaf1e6bfabd3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fetch multiple random joke objects and verify their properties",
+              "fullTitle": "Jokes API Service tests should fetch multiple random joke objects and verify their properties",
+              "timedOut": false,
+              "duration": 4141,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const randomJokes=await jokesApiService.getRandomJokes(5);(0,import_chai.expect)(randomJokes).to.be.an(\"array\");(0,import_chai.expect)(randomJokes.length).to.equal(5);randomJokes.forEach(joke=>{(0,import_chai.expect)(joke).to.have.property(\"id\");(0,import_chai.expect)(joke).to.have.property(\"type\")})",
+              "err": {},
+              "uuid": "79925fcd-3cda-4b61-9ea0-bf17c070f94a",
+              "parentUUID": "9624e139-cf2b-4af9-a460-aaf1e6bfabd3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fetch a joke by its ID and verify its properties",
+              "fullTitle": "Jokes API Service tests should fetch a joke by its ID and verify its properties",
+              "timedOut": false,
+              "duration": 1030,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const jokeId=context.jokeId;const jokeById=await jokesApiService.getJokeById(jokeId);(0,import_chai.expect)(jokeById).to.have.property(\"id\").that.equals(jokeId);(0,import_chai.expect)(jokeById).to.have.property(\"type\");(0,import_chai.expect)(jokeById).to.have.property(\"setup\");(0,import_chai.expect)(jokeById).to.have.property(\"punchline\")",
+              "err": {},
+              "uuid": "77ee297b-6c21-4f45-8fe1-372d30027f92",
+              "parentUUID": "9624e139-cf2b-4af9-a460-aaf1e6bfabd3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fetch all available joke types and verify their structure",
+              "fullTitle": "Jokes API Service tests should fetch all available joke types and verify their structure",
+              "timedOut": false,
+              "duration": 290,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const jokeTypes=await jokesApiService.getJokeTypes();(0,import_chai.expect)(jokeTypes).to.be.an(\"array\");(0,import_chai.expect)(jokeTypes.length).to.be.greaterThan(0);(0,import_chai.expect)(jokeTypes).to.include(\"general\")",
+              "err": {},
+              "uuid": "1b24a95a-2f1c-4f9a-b73f-148b00210196",
+              "parentUUID": "9624e139-cf2b-4af9-a460-aaf1e6bfabd3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fetch a random joke and verify it contains the required properties",
+              "fullTitle": "Jokes API Service tests should fetch a random joke and verify it contains the required properties",
+              "timedOut": false,
+              "duration": 1210,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const randomJoke=await jokesApiService.getRandomJoke();(0,import_chai.expect)(randomJoke).to.have.property(\"setup\");(0,import_chai.expect)(randomJoke).to.have.property(\"punchline\");(0,import_chai.expect)(randomJoke).to.have.property(\"type\")",
+              "err": {},
+              "uuid": "7bcb377a-a602-4ca9-87d4-6ffb62ace6ef",
+              "parentUUID": "9624e139-cf2b-4af9-a460-aaf1e6bfabd3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "02fbfbb9-9412-4e9d-b94d-756efd95b0fb",
+            "79925fcd-3cda-4b61-9ea0-bf17c070f94a",
+            "77ee297b-6c21-4f45-8fe1-372d30027f92",
+            "1b24a95a-2f1c-4f9a-b73f-148b00210196",
+            "7bcb377a-a602-4ca9-87d4-6ffb62ace6ef"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8369,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 120000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 120000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "[object Object]": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
