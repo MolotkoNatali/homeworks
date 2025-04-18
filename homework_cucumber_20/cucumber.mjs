@@ -12,7 +12,8 @@ export default {
     import: [
         'src/steps/**/*.ts',
         'src/hooks/**/*.ts',
-        'src/worlds/**/*.ts'
+        'src/worlds/**/*.ts',
+        'src/pages/**/*.ts',
     ],
     paths: ['features/**/*.feature'], 
     retry: 2

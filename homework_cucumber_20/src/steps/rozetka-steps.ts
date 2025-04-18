@@ -11,25 +11,23 @@ Given('I am on the Rozetka home page', { timeout: 20000 }, async function (this:
     this.homePage = homePage;
 });
 
-When('I go to the first category', async function () {
-    const homePage = new HomePage(this.page);
-    await homePage.goToFirstCategory();
+When('I go to the first category', async function (this: CustomWorld) {
+    await this.homePage?.goToFirstCategory();
 });
 
-Then('I should see the list of category products', async function () {
+Then('I should see the list of category products', async function (this: CustomWorld) {
     const searchResultsPage = new SearchResultsPage(this.page);
     await searchResultsPage.waitForCategoryProducts();
     const isVisible = await searchResultsPage.isProductListVisible();
     expect(isVisible).toBe(true);
 });
 
-When('I add the first product to the cart', async function () {
-    const homePage = new HomePage(this.page);
-    await homePage.addFirstProductToCart();
+When('I add the first product to the cart', async function (this: CustomWorld) {
+    await this.homePage?.addFirstProductToCart();
 });
 
-Then('I should see the cart badge visible', async function () {
-    const homePage = new HomePage(this.page);
-    const isVisible = await homePage.isCartBadgeVisible();
+Then('I should see the cart badge visible', async function (this: CustomWorld) {
+    const isVisible = await this.homePage?.isCartBadgeVisible();
     expect(isVisible).toBe(true);
 });
+
