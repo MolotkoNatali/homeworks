@@ -7,3 +7,4 @@
 2025-04-19 16:48:31 - [32minfo[39m: Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
 2025-04-19 16:48:45 - [32minfo[39m: Local binary started successfully
 2025-04-19 16:48:48 - [32minfo[39m: Testhub started with id: j0kds3hq0izjjs4h70f7alju8frhejjfw1qds6sb
+2025-04-19 17:02:39 - [32minfo[39m: Shutdown triggered by SIGINT
