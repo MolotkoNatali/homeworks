@@ -2,7 +2,7 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { AxiosError } from 'axios';
 import { NotesApiService } from '../../src/services/notes-api-service';
-import { before} from 'node:test';
+import { before } from 'node:test';
 
 describe('Notes API Service tests', () => {
     let notesService: NotesApiService;
@@ -11,12 +11,16 @@ describe('Notes API Service tests', () => {
     }
     const context: TestContext = {};
 
-    before(() => {
+    before(async () => {
         notesService = new NotesApiService();
     });
 
     it('should create a new note', async () => {
-        const newNote = { title: 'Test Note', content: 'This is test content' };
+        const newNote = {
+            title: 'Test Note',
+            description: 'This is test content',
+            category: 'Work'
+        };
         const created = await notesService.createNote(newNote);
         expect(created).to.include(newNote);
         expect(created).to.have.property('id');
@@ -37,10 +41,33 @@ describe('Notes API Service tests', () => {
     });
 
     it('should update a note', async () => {
-        const id = context.noteId;
-        if (!id) throw new Error('noteId is undefined');
-        const updated = await notesService.updateNote(id, { title: 'Updated Title' });
-        expect(updated).to.have.property('title', 'Updated Title');
+        if (!context.noteId) {
+            throw new Error('Note ID is undefined');
+        }
+
+        const updatedNote = {
+            title: 'Updated Title',
+            description: 'Updated content',
+            category: 'Work', // Ensure this category exists in your system
+            completed: false // Add the completed field with a boolean value
+        };
+
+        try {
+            const updated = await notesService.updateNote(context.noteId, updatedNote);
+
+            expect(updated).to.include(updatedNote);
+            expect(updated).to.have.property('id').that.equals(context.noteId);
+            expect(updated.title).to.equal(updatedNote.title);
+            expect(updated.description).to.equal(updatedNote.description);
+            expect(updated.category).to.equal(updatedNote.category);
+            expect(updated.completed).to.equal(updatedNote.completed); // Check the completed status
+        } catch (error: unknown) {
+            if (error instanceof AxiosError) {
+                throw error;
+            } else {
+                throw error;
+            }
+        }
     });
 
     it('should delete the note', async () => {

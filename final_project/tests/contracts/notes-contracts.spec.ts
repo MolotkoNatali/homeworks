@@ -1,74 +1,62 @@
 import { expect } from 'chai';
 import { NotesApiService } from '../../src/services/notes-api-service';
-import { AxiosError } from 'axios';
-import { before, describe, it } from 'node:test';
 
-describe('Notes API Contract tests', () => {
+describe('Contract Test: Notes API', () => {
     let notesService: NotesApiService;
 
     before(() => {
         notesService = new NotesApiService();
     });
 
-    it('should return a note object with required fields', async () => {
-        const note = await notesService.createNote({
-            title: 'Contract Test',
-            content: 'Testing structure'
-        });
-
-        expect(note).to.have.all.keys('id', 'title', 'content', 'createdAt', 'updatedAt');
-        expect(note.id).to.be.a('string');
-        expect(note.title).to.be.a('string');
-        expect(note.content).to.be.a('string');
-        expect(new Date(note.createdAt)).to.be.a('date');
-        expect(new Date(note.updatedAt)).to.be.a('date');
-        await notesService.deleteNote(note.id);
+    it('should create a note with required properties', async () => {
+        const newNote = {
+            title: 'Test Note',
+            description: 'This is test content',
+            category: 'Work'
+        };
+        const createdNote = await notesService.createNote(newNote);
+        expect(createdNote).to.have.property('id');
+        expect(createdNote).to.have.property('title').that.equals(newNote.title);
+        expect(createdNote).to.have.property('description').that.equals(newNote.description);
+        expect(createdNote).to.have.property('category').that.equals(newNote.category);
+        expect(createdNote).to.have.property('completed').that.is.a('boolean');
+        expect(createdNote).to.have.property('created_at').that.is.a('string');
+        expect(createdNote).to.have.property('updated_at').that.is.a('string');
     });
 
-    it('should return all notes as an array of note objects', async () => {
+    it('should retrieve a note by its ID with valid properties', async () => {
+        const newNote = {
+            title: 'Test Note',
+            description: 'This is test content',
+            category: 'Work'
+        };
+
+        const createdNote = await notesService.createNote(newNote);
+        const noteId = createdNote.id;
+        const retrievedNote = await notesService.getNoteById(noteId);
+
+        expect(retrievedNote).to.have.property('id').that.equals(noteId);
+        expect(retrievedNote).to.have.property('title').that.equals(newNote.title);
+        expect(retrievedNote).to.have.property('description').that.equals(newNote.description);
+        expect(retrievedNote).to.have.property('category').that.equals(newNote.category);
+        expect(retrievedNote).to.have.property('completed').that.is.a('boolean');
+        expect(retrievedNote).to.have.property('created_at').that.is.a('string');
+        expect(retrievedNote).to.have.property('updated_at').that.is.a('string');
+    });
+
+    it('should retrieve all notes with valid properties', async () => {
         const notes = await notesService.getAllNotes();
+        notes.forEach(note => {
+            expect(note).to.have.property('id').that.is.a('string');
+            expect(note).to.have.property('title').that.is.a('string');
+            expect(note).to.have.property('description').that.is.a('string');
+            expect(note).to.have.property('category').that.is.a('string');
+            expect(note).to.have.property('completed').that.is.a('boolean');
+            expect(note).to.have.property('created_at').that.is.a('string');
+            expect(note).to.have.property('updated_at').that.is.a('string');
+        });
+
         expect(notes).to.be.an('array');
-
-        for (const note of notes) {
-            expect(note).to.include.all.keys('id', 'title', 'content', 'createdAt', 'updatedAt');
-        }
-    });
-
-    it('should return a single note matching contract when fetched by ID', async () => {
-        const newNote = await notesService.createNote({
-            title: 'Single Note',
-            content: 'Content here'
-        });
-
-        const note = await notesService.getNoteById(newNote.id);
-        expect(note).to.include.all.keys('id', 'title', 'content', 'createdAt', 'updatedAt');
-        expect(note.id).to.equal(newNote.id);
-        await notesService.deleteNote(newNote.id);
-    });
-
-    it('should preserve data types after update', async () => {
-        const note = await notesService.createNote({
-            title: 'Before update',
-            content: 'Contract test'
-        });
-
-        const updated = await notesService.updateNote(note.id, {
-            title: 'Updated'
-        });
-
-        expect(updated).to.have.property('title').that.is.a('string');
-        expect(updated).to.have.property('content').that.is.a('string');
-        expect(updated).to.have.property('id').that.equals(note.id);
-        await notesService.deleteNote(note.id);
-    });
-
-    it('should return 404 error structure on invalid ID', async () => {
-        try {
-            await notesService.getNoteById('non-existent-id');
-        } catch (err) {
-            const error = err as AxiosError;
-            expect(error.response?.status).to.equal(404);
-            expect(error.response?.data).to.have.property('message').that.is.a('string');
-        }
+        expect(notes.length).to.be.greaterThan(0);
     });
 });

@@ -21,6 +21,7 @@
     "@stylistic/eslint-plugin-ts": "^4.2.0",
     "@types/chai": "^5.2.1",
     "@types/mocha": "^10.0.10",
+    "@types/mochawesome": "^6.2.4",
     "@types/node": "^22.14.1",
     "@typescript-eslint/eslint-plugin": "^8.29.1",
     "@typescript-eslint/parser": "^8.29.1",
