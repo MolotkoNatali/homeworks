@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: expense-tracker-app
+    ports:
+      - "3000:3000"
+    networks:
+      - test-network
+
+  tests:
+    image: mcr.microsoft.com/playwright:v1.43.1-focal
+    container_name: automation-tests
+    working_dir: /tests
+    volumes:
+      - ./tests:/tests
+    command: >
+      bash -c "
+        npm install &&
+        npx playwright install &&
+        npm run test:api &&
+        npm run test:contracts &&
+        npx playwright test
+      "
+    depends_on:
+      - frontend
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge
+    
