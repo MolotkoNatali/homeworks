@@ -50,6 +50,17 @@ jobs:
       - name: Run Playwright tests
         run: npm run test
         working-directory: ${{ env.BUILD_FOLDER }}
-        
-      - name: Debug List contents of build folder
-        run: ls -la ${{ env.BUILD_FOLDER }}
+
+      - name: Build allure report
+        run: npx allure generate allure-results --clean --single-file -D allure-report
+        working-directory: ${{ env.BUILD_FOLDER }}
+      
+      - name: upload playwright allure report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-allure-report
+          path: ${{ env.BUILD_FOLDER }}/allure-report
+          retention-days: 30
+
+
