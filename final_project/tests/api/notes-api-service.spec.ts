@@ -48,8 +48,8 @@ describe('Notes API Service tests', () => {
         const updatedNote = {
             title: 'Updated Title',
             description: 'Updated content',
-            category: 'Work', // Ensure this category exists in your system
-            completed: false // Add the completed field with a boolean value
+            category: 'Work',
+            completed: false
         };
 
         try {
@@ -60,7 +60,7 @@ describe('Notes API Service tests', () => {
             expect(updated.title).to.equal(updatedNote.title);
             expect(updated.description).to.equal(updatedNote.description);
             expect(updated.category).to.equal(updatedNote.category);
-            expect(updated.completed).to.equal(updatedNote.completed); // Check the completed status
+            expect(updated.completed).to.equal(updatedNote.completed);
         } catch (error: unknown) {
             if (error instanceof AxiosError) {
                 throw error;
