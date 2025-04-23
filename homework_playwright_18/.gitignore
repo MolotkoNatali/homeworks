@@ -6,3 +6,7 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 browser-context.json
+.obs_test_details-eblh5nvcdf4t0js6w7tzqh2kvbyaibcyu2n7xazw/
+allure-report/
+allure-results/
+log/
