@@ -34,8 +34,8 @@ jobs:
       - name: Cache npm dependencies
         uses: actions/cache@v4
         with:
-          path: ${{ env.BUILD_FOLDER }}/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('${{ env.BUILD_FOLDER }}/package-lock.json') }}
+          path: final_project/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('final_project/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
@@ -50,3 +50,6 @@ jobs:
       - name: Run Playwright tests
         run: npm run test
         working-directory: ${{ env.BUILD_FOLDER }}
+        
+      - name: Debug List contents of build folder
+        run: ls -la ${{ env.BUILD_FOLDER }}
