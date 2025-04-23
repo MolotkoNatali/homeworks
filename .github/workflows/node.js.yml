@@ -12,6 +12,10 @@ on:
 jobs:
   build:
 
+  env: 
+    BUILD_FOLDER: ./final_project
+    HEADLESS: true
+
     runs-on: ubuntu-latest
 
     strategy:
@@ -26,6 +30,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - name: install packages
+      run: npm ci
+      working-directory: ${{env.BUILD_FOLDER}}
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps
+      working-directory: ${{env.BUILD_FOLDER}}
+    - name: run Playwright tests
+      run: npm run test
+      working-directory: ${{env.BUILD_FOLDER}}

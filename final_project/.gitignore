@@ -5,6 +5,6 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-browser-context.json
+# browser-context.json
 mochawesome-report/
 allure-results/
