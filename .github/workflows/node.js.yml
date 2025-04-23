@@ -54,7 +54,7 @@ jobs:
       - name: Build allure report
         run: npx allure generate allure-results --clean --single-file -D allure-report
         working-directory: ${{ env.BUILD_FOLDER }}
-      
+        if: always()
       - name: upload playwright allure report
         uses: actions/upload-artifact@v4
         if: always()
