@@ -10,6 +10,12 @@ services:
       - "3000:3000"
     networks:
       - test-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      retries: 5
+      start_period: 10s
+      timeout: 10s
 
   tests:
     image: mcr.microsoft.com/playwright:v1.43.1-focal
@@ -26,11 +32,11 @@ services:
         npx playwright test
       "
     depends_on:
-      - frontend
+      frontend:
+        condition: service_healthy
     networks:
       - test-network
 
 networks:
   test-network:
     driver: bridge
-    
