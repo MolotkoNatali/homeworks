@@ -1,4 +1,7 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 export const credentials = {
-    email: 'developercss@gmail.com',
-    password: 'Perfpass1'
+    email: process.env.EMAIL || '',
+    password: process.env.PASSWORD || ''
 };

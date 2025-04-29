@@ -63,4 +63,9 @@ export class NotesPage {
         const deleteButton = noteCard.locator('[data-testid="note-delete"]');
         await deleteButton.click();
     }
+
+    public async expectNotePageOpened(): Promise<void> {
+        await this.page.waitForURL(/\/notes\/app\/notes\/\w+/, { timeout: 5000 });
+    }
+
 }

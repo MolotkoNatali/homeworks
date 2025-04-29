@@ -4,12 +4,12 @@
   "description": "1. **What is Playwright**\r 2. **Pros and const of Playwright**\r 3. **Install Playwright Test**\r 4. **Playwright config**\r 5. **Project dependencies in test run and storage state usage**\r 6. **Page Objects**\r 7. **Tests**",
   "main": "index.js",
   "scripts": {
-    "test:api": "mocha -r ts-node/register tests/api/**/*.spec.ts",
-    "test:contracts": "mocha -r ts-node/register tests/contracts/**/*.spec.ts",
-    "test": "npx playwright test",
-    "allure:generate": "allure generate --clean",
-    "allure:open": "allure open"
-  },
+  "test:api": "mocha",
+  "test:contracts": "mocha --spec tests/contracts/**/*.spec.ts",
+  "test": "npx playwright test",
+  "allure:generate": "allure generate --clean --single-file",
+  "allure:open": "allure open"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -50,6 +50,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "dotenv": "^16.5.0",
     "tsconfig-paths": "^4.2.0"
   }
 }

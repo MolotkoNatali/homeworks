@@ -1,12 +1,13 @@
 {
-    "extension": "ts",
+    "extension": ["ts"],
     "spec": "tests/api/**/*.spec.ts",
-    "require": ["tsx", "src/hooks/mocha-global-setup.ts"],
+    "require": ["ts-node/register", "src/hooks/mocha-global-setup.ts"],
     "retries": 2,
     "timeout": 120000,
     "reporter": "mochawesome",
     "reporterOptions": {
-    "reportFilename": "customReportFilename",
-    "quiet": true
+      "reportFilename": "customReportFilename",
+      "quiet": true
     }
-}
+  }
+  

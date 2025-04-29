@@ -1,4 +1,4 @@
-import { test, expect, Browser, Page } from '@playwright/test';
+import { test, expect, Page, Browser } from '@playwright/test';
 import { LoginPage } from 'src/pages/login-page';
 import { NotesPage } from 'src/pages/notes-page';
 import { credentials } from 'src/config/credentials';
@@ -18,18 +18,17 @@ test.beforeEach(async ({ browser: testBrowser }) => {
 
     loginPage = new LoginPage(page);
     notesPage = new NotesPage(page);
+
+    await page.goto(loginUrl);
+    await loginPage.login(credentials.email, credentials.password);
+    await notesPage.waitForNotesLoaded();
 });
 
 test('Case 1: User is logged in successfully and redirected to notes page', async () => {
-    await page.goto(loginUrl);
-    await loginPage.login(credentials.email, credentials.password);
     await expect(page).toHaveURL(appUrl);
 });
 
 test('Case 2: Add a new note', async () => {
-    await page.goto(loginUrl);
-    await loginPage.login(credentials.email, credentials.password);
-    await notesPage.waitForNotesLoaded();
     await notesPage.clickAddNewNoteButton();
 
     const newNote = {
@@ -39,13 +38,12 @@ test('Case 2: Add a new note', async () => {
     };
 
     await notesPage.createNote(newNote);
+    await notesPage.viewNoteByTitle(newNote.title);
+    await notesPage.expectNotePageOpened();
 });
 
 test('Case 3: View created note', async () => {
-    await page.goto(loginUrl);
-    await loginPage.login(credentials.email, credentials.password);
     const noteTitle = 'my first note';
-    await notesPage.waitForNotesLoaded();
     await notesPage.viewNoteByTitle(noteTitle);
-    await expect(page).toHaveURL(/\/notes\/app\/notes\/\w+/);
+    await notesPage.expectNotePageOpened();
 });
