@@ -7,3 +7,4 @@ node_modules/
 # browser-context.json
 mochawesome-report/
 allure-results/
+.env/
