@@ -4,5 +4,6 @@
         "dtos",
         "favourites",
         "rozetka"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
