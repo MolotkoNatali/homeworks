@@ -1,31 +1,64 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# This workflow will do a clean installation of node dependencies, cache/restore them,
+# build the source code and run tests across different versions of Node.js
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
 
 name: Node.js CI
 
 on:
   push:
-    branches: [ "master", "final_project" ]
+    branches: [ "master", "homework_docker_22" ]
   pull_request:
     branches: [ "master" ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+
+    env:
+      BUILD_FOLDER: ./homework_playwright_18
+      HEADLESS: true
 
     strategy:
       matrix:
         node-version: [22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: final_project/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('final_project/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ${{ env.BUILD_FOLDER }}
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+        working-directory: ${{ env.BUILD_FOLDER }}
+
+      - name: Run Playwright tests
+        run: npm run test
+        working-directory: ${{ env.BUILD_FOLDER }}
+
+      - name: Build allure report
+        run: npx allure generate allure-results --clean --single-file -D allure-report
+        working-directory: ${{ env.BUILD_FOLDER }}
+        if: always()
+      - name: upload playwright allure report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-allure-report
+          path: ${{ env.BUILD_FOLDER }}/allure-report
+          retention-days: 30
